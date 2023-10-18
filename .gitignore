@@ -1,1 +1,15 @@
+# vscode
 /.DS_Store
+/.vscode
+/.vscode-insiders
+/.idea
+/.vs
+
+# python
+__pycache__/
+/dist
+/build
+*.egg-info
+*.egg
+
+/test
