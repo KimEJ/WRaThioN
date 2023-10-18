@@ -1,19 +1,24 @@
 from setuptools import setup, find_packages
 
+with open('README.md', encoding='utf-8') as f:
+    long_description = f.read()
+
 setup(
     name                = 'WRaThioN',
-    version             = '0.1',
-    description         = 'WRaThioN: WRTN for Python',
+    version             = '0.0.2',
+    description         = 'WRaThioN: WRTN Client For Python',
     author              = 'kimuj5090',
     author_email        = 'kimuj5090@gmail.com',
     url                 = 'https://github.com/KimEJ/WRaThioN',
-    download_url        = 'https://github.com/KimEJ/WRaThioN/archive/0.0.tar.gz',
+    # download_url        = 'https://github.com/KimEJ/WRaThioN/archive/0.0.tar.gz',
     install_requires    =  [],
     packages            = find_packages(exclude = ['pyjwt', 'asyncio', 'aiohttp', 'json', 'argparse', 'docs', 'tests', 'tests.*', 'pyjwt.*', 'asyncio.*', 'aiohttp.*', 'json.*', 'argparse.*']),
     keywords            = ['WRTN', 'WRaThioN'],
     python_requires     = '>=3',
     package_data        = {},
-    zip_safe            = False,
+    license             = 'MIT',
+    long_description    = long_description,
+    long_description_content_type='text/markdown',
     classifiers         = [
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.2',

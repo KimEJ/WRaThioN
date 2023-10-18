@@ -30,7 +30,7 @@ You can retrieve cookies from [WRTN](https://wrtn.ai) as follows:
 ## Use Prompt
 
 ```bash
-$ python3 -m WRaThioN.WRaThioN --help
+$ python3 -m WRaThioN --help
 usage: WRaThioN.py [-h] [--token TOKEN] [--id ID]
 
 WRTN AI Prompt
