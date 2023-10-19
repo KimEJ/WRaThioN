@@ -12,7 +12,7 @@ setup(
     url                 = 'https://github.com/KimEJ/WRaThioN',
     # download_url        = 'https://github.com/KimEJ/WRaThioN/archive/0.0.tar.gz',
     install_requires    =  [],
-    packages            = find_packages(exclude = ['pyjwt', 'asyncio', 'aiohttp', 'json', 'argparse', 'docs', 'tests', 'tests.*', 'pyjwt.*', 'asyncio.*', 'aiohttp.*', 'json.*', 'argparse.*']),
+    packages            = find_packages(exclude = ['pyjwt', 'sseclient-py', 'requests', 'json', 'argparse', 'pyjwt.*', 'json.*', 'argparse.*']),
     keywords            = ['WRTN', 'WRaThioN'],
     python_requires     = '>=3',
     package_data        = {},
