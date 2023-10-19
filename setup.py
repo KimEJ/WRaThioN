@@ -5,7 +5,7 @@ with open('README.md', encoding='utf-8') as f:
 
 setup(
     name                = 'WRaThioN',
-    version             = '0.1.0',
+    version             = '0.1.1',
     description         = 'WRaThioN: WRTN Client For Python',
     author              = 'kimuj5090',
     author_email        = 'kimuj5090@gmail.com',

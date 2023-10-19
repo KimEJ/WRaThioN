@@ -48,25 +48,23 @@ options:
 ```python
 from WRaThioN import WRaThioN
 import argparse
-import asyncio
 
-async def main() -> None:
-    client = await WRaThioN.WRaThioN.WRTN(args.token, args.id)
+def main() -> None:
+    client = WRaThioN(args.token, args.id)
 
-    await client.create_chat()
+    client.create_chat()
     while True:
         prompt = input("You: ")
 
         if prompt == "!reset":
-            await client.create_chat()
+            client.create_chat()
             continue
         elif prompt == "!exit":
-            await client.delete_chat()
-            await client.close()
+            client.delete_chat()
             break
 
         print("Bot: ", end="", flush=True)
-        response = await client.chat(prompt)
+        response = client.chat(prompt)
         print(response['message']['content'], end="", flush=True)
         print("\n")
 
@@ -76,9 +74,7 @@ if __name__ == "__main__":
     parser.add_argument('--id', type=str, help='wrtn id(__w_id))')
 
     args = parser.parse_args()
-    # print(args.token)
-    # print(args.id)
     
-    asyncio.run(main())
+    main()
 ```
 
