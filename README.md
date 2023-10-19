@@ -2,6 +2,8 @@
 
 > [!WARNING]
 > This is an **unofficial** client.
+> This package **does not** take into account [WRTN](https://wrtn.ai)'s terms and conditions.
+> Any dispute with WRTN regarding the terms and conditions is **entirely your responsibility**.
 
 ## Installation
 
