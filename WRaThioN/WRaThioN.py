@@ -7,7 +7,7 @@ import argparse
 import sseclient
     
 async def on_request_start(session, context, params):
-    logging.getLogger('aiohttp.client').debug(f'Starting request <{params}>')
+    logging.getLogger('requests.packages.urllib3').debug(f'Starting request <{params}>')
 
 class WRaThioN:
     def __init__(self, token, __w_id, level=None):
@@ -23,7 +23,6 @@ class WRaThioN:
             if response['result'] != "SUCCESS":
                 raise Exception("Failed to refresh token")
             decoded = jwt.decode(response['data']['accessToken'], options={"verify_signature": False})
-            # print (decoded["email"])
 
             self.user=decoded["email"]
             self.session.headers.update({"Authorization": "Bearer "+response['data']['accessToken']})
@@ -43,7 +42,6 @@ class WRaThioN:
 
         with self.session.post(f'https://api.wow.wrtn.ai/chat') as response:
             response = response.json()
-            # print(response)
             result = response['result']
             if result != "SUCCESS":
                 raise Exception("Failed to create chat session")
@@ -56,7 +54,6 @@ class WRaThioN:
         room = room or self.room
         with self.session.delete(f'https://api.wow.wrtn.ai/chat/{room}') as response:
             response = response.json()
-            # print(response)
             return response
         
     def chat(self, text, model='gpt-4'):
@@ -68,7 +65,6 @@ class WRaThioN:
                                      json={'message': text, 'reroll': False}) as response:
             return self.__get_response(response)
             
-        
     def tool(self, id, inputs, model='gpt-4'):
         text = text[:1500]
         with self.session.post(url=f'https://studio-api.wow.wrtn.ai/store/tool/{id}/generate', stream=True,
@@ -98,11 +94,8 @@ def main() -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='WRTN AI Prompt')
-    parser.add_argument('--token', type=str, help='refresh token')
-    parser.add_argument('--id', type=str, help='wrtn id(__w_id))')
+    parser.add_argument('--token', type=str, help='refresh token', required=True)
+    parser.add_argument('--id', type=str, help='wrtn id(__w_id)', required=True)
 
     args = parser.parse_args()
-    # print(args.token)
-    # print(args.id)
-    
     main()

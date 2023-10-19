@@ -5,14 +5,14 @@ with open('README.md', encoding='utf-8') as f:
 
 setup(
     name                = 'WRaThioN',
-    version             = '0.0.2',
+    version             = '0.1.0',
     description         = 'WRaThioN: WRTN Client For Python',
     author              = 'kimuj5090',
     author_email        = 'kimuj5090@gmail.com',
     url                 = 'https://github.com/KimEJ/WRaThioN',
     # download_url        = 'https://github.com/KimEJ/WRaThioN/archive/0.0.tar.gz',
-    install_requires    =  [],
-    packages            = find_packages(exclude = ['pyjwt', 'sseclient-py', 'requests', 'json', 'argparse', 'pyjwt.*', 'json.*', 'argparse.*']),
+    install_requires    =  ['pyjwt', 'sseclient-py', 'requests', 'argparse',],
+    packages            = find_packages(exclude = ['pyjwt', 'sseclient-py', 'requests', 'argparse',]),
     keywords            = ['WRTN', 'WRaThioN'],
     python_requires     = '>=3',
     package_data        = {},
